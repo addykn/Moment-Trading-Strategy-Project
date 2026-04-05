@@ -1,5 +1,7 @@
 # Moment Trading Strategy Project 
+
 # Momentum Strategy Backtest
+<img width="1448" height="756" alt="image" src="https://github.com/user-attachments/assets/e5348723-bc92-4420-83f2-f255d9fb0cf9" />
 
 This project builds a simple momentum strategy using S&P 500 stocks.
 
