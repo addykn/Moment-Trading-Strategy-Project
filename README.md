@@ -1,6 +1,5 @@
-# Moment Trading Strategy Project 
-
 # Momentum Strategy Backtest
+
 <img width="1448" height="756" alt="image" src="https://github.com/user-attachments/assets/e5348723-bc92-4420-83f2-f255d9fb0cf9" />
 
 This project builds a simple momentum strategy using S&P 500 stocks.
@@ -29,9 +28,9 @@ Returns are calculated using next month’s performance after forming the portfo
 
 The results line up with what you would expect from a momentum strategy.
 
-The winner portfolio generally outperforms the loser portfolio. The spread between the two is captured in the winners minus losers portfolio, which shows the clearest signal.
+The winner portfolio generally outperforms the loser portfolio, and the spread between the two is captured in the winners minus losers portfolio, which shows the clearest signal.
 
-On a risk adjusted basis, the long short portfolio performs better than the individual long only portfolios.
+The long short portfolio tends to perform better on a risk adjusted basis than the individual long only portfolios.
 
 From the regressions, the strategy shows positive alpha relative to the market, and some of that remains even after controlling for size and value factors.
 
@@ -47,43 +46,28 @@ Turnover and holding period
 
 I also ran CAPM and Fama French 3 factor regressions to understand where the returns are coming from.
 
+## Interpretation
+
+A few things stood out to me:
+
+The winner portfolio consistently outperformed the loser portfolio, which supports the momentum effect.
+
+The WML portfolio captured this most clearly and showed the strongest overall performance.
+
+Sharpe ratios were generally higher for the WML strategy, which suggests the long short structure improves efficiency.
+
+Even after adjusting for market, size, and value, the strategy still showed some alpha, which is consistent with momentum being a separate factor.
+
+Turnover was moderate, which means the strategy would require regular rebalancing, and the holding period is relatively short.
+
 ## Limitations
 
 This uses the current S&P 500 constituents applied to historical data, so there is survivorship bias.
 
-I also did not include transaction costs and used equal weighting for simplicity.
+Transaction costs are not included and all portfolios are equal weighted for simplicity.
 
 ## Takeaway
 
-This was a straightforward way to test momentum in a structured way. The results support the idea that recent winners tend to keep outperforming, although in a real setting you would need to adjust for costs and use cleaner data.
+This was a straightforward way to test momentum in a structured way.
 
-
-
-Results & Interpretation
-
-Results & Interpretation
-
-A few things stood out from the results:
-
-- The **winner portfolio consistently outperformed the loser portfolio**, which is what we would expect from a momentum-based strategy.
-- The **WML (winners minus losers) portfolio showed the clearest signal**, capturing the spread between strong and weak performers.
-- In most periods, the WML strategy delivered **higher returns than the market**, although it also came with higher volatility.
-
-From a risk-adjusted perspective:
-
-- The **Sharpe ratio for the WML portfolio was generally stronger than the individual winner and loser portfolios**, suggesting the long-short structure improves efficiency.
-- The **information ratio vs the market was positive**, indicating that the strategy adds value beyond just market exposure.
-
-Looking at the regressions:
-
-- The **CAPM results showed positive alpha**, meaning the strategy is not fully explained by market movements alone.
-- Even after controlling for size and value in the **Fama-French 3-factor model**, a portion of the alpha remained, which supports the idea that momentum is a distinct factor.
-
-From a practical standpoint:
-
-- The strategy has **moderate turnover**, which suggests it would require regular rebalancing.
-- The implied **holding period is relatively short**, which is typical for momentum strategies.
-
-Overall, the results support the idea that **momentum is a persistent effect**, although in a real-world setting you would need to account for transaction costs and more realistic data assumptions.
-
-
+The results support the idea that recent winners tend to keep outperforming, although in a real setting you would need to adjust for costs and use cleaner data.
